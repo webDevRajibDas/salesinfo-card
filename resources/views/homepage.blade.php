@@ -6,7 +6,7 @@ Home
 @section('content')
 <section id="intro">
     <video class="video-background" autoplay muted loop playsinline>
-        <source src="{{ asset('assets/intro-video.mp4') }}" type="video/mp4">
+        <source src="{{ asset('assets/hero_video.mp4') }}" type="video/mp4">
         <source src="movie.ogg" type="video/ogg">
         Your browser does not support the video tag.
     </video>
@@ -31,11 +31,7 @@ Home
             
             <div class="hero-content appear-animation" data-appear-animation="maskUp"
                         data-appear-animation-delay="500">
-                <div class="mb-4 overflow-hidden">
-                    <h1 class="headline font-weight-semibold ls-0 appear-animation" data-appear-animation="maskUp"
-                        data-appear-animation-delay="500">B2B <span class="typewriter">Smart Cards</span> that Convert
-                    </h1>
-                </div>
+                
                 <p class="pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter"
                     data-appear-animation-delay="700">Info Business Card is a modern, paperless alternative to
                     traditional business cards. It securely stores all your essential contact details and can be
@@ -317,13 +313,12 @@ Home
 
                 <div class="faq-item" id="faq1">
                     <div class="faq-question" onclick="toggleFaq('faq1')">
+                        
                         <h5>Does the other person need Info Card? </h5>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>No! When someone taps your Info Digital Smart Card or scans your QR code your profile will
-                            instantly appear on their device via a web browser. No app is needed for them to receive
-                            your information.</p>
+                        <p>No! When someone taps your Info Digital Smart Card or scans your QR code your profile will instantly appear on their device via a web browser. No app is needed for them to receive your information.</p>
                     </div>
                 </div>
 
