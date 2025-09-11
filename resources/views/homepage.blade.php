@@ -27,25 +27,61 @@ Home
     <div class="container">
         <div class="py-5 row align-items-center">
             <div class="mb-5 col-lg-6 mb-lg-0">
+               
+            
+            <div class="hero-content appear-animation" data-appear-animation="maskUp"
+                        data-appear-animation-delay="500">
                 <div class="mb-4 overflow-hidden">
                     <h1 class="headline font-weight-semibold ls-0 appear-animation" data-appear-animation="maskUp"
                         data-appear-animation-delay="500">B2B <span class="typewriter">Smart Cards</span> that Convert
                     </h1>
                 </div>
                 <p class="pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter"
-                    data-appear-animation-delay="700">আপনি জানেন কি? এখন একটা টাচেই চলে আসবে আপনার সকল তথ্য!
-                    X কাগজের ভিজিটিং কার্ড নয়
-                    * এবার ব্যবহার করুন স্মার্ট NFC কার্ড!
-                    * আপনার নাম, ফোন, ইমেইল, সোশাল মিডিয়া, প্রোডাক্ট সব একসাথে একটা প্রোফাইলে!
-                    * NFC না থাকলে? চিন্তা নেই — রয়েছে QR কোড!
-                    ওয়াটারপ্রুফ, হাই কোয়ালিটি PVC কার্ড
-                    * ফুল কাস্টম ডিজাইন সহ পাচ্ছেন ১০ বছরের প্রোফাইল সাপোর্ট
-                    অর্ডার করতে ভিজিট করুন: b2bplartformbd.com
-                    * এখনই ইনবক্স করুন NFC কার্ড বানাতে! অথবা কল করুন : 01824-929282</p>
+                    data-appear-animation-delay="700">Info Business Card is a modern, paperless alternative to
+                    traditional business cards. It securely stores all your essential contact details and can be
+                    instantly shared via NFC, QR code, or link.</p>
 
-                <a href="#shop_container" data-hash data-hash-offset="70"
+                <div class="features-grid appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Name & Surname</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Company/Organization</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Contact Details</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Address</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Website</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Social Media Links</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Photo Gallery</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Theme Customization</span>
+                    </div>
+                </div>
+
+                <a href="#" data-hash data-hash-offset="70"
                     class="btn btn-primary btn-outline btn-rounded font-weight-bold btn-px-5 btn-py-2 appear-animation"
-                    data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">অর্ডার করুন </a>
+                    data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1100">অর্ডার করুন</a>
+            </div>
+
+        
             </div>
             <div class="col-lg-5 offset-lg-1 appear-animation" data-appear-animation="fadeInLeftShorter"
                 data-appear-animation-delay="200">
@@ -65,9 +101,6 @@ Home
         </div>
     </div>
 </section>
-
-
-
 
 <div class="container overflow-hidden container-xl position-relative">
     <!-- Categories Section -->
@@ -121,7 +154,7 @@ Home
                             </div>
                         </div>
                         <div class="card-body">
-                        
+
                             <ul class="card-features">
                                 <li>নাম ও পদবি</li>
                                 <li>প্রতিষ্ঠানের নাম</li>
@@ -197,7 +230,7 @@ Home
             </div>
         </div>
     </section>
-</div>
+
 
 
 <div class="container">
@@ -262,63 +295,6 @@ Home
     </div>
 </section>
 
-
-<div id="shop_container" class="container shop">
-    <div class="py-5 my-5 row align-items-center justify-content-center">
-        <div class="col-lg-7">
-            <div class="mb-0 owl-carousel owl-theme dots-inside"
-                data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 1}, '992': {'items': 1}, '1200': {'items': 1}}, 'dots': true, 'nav': false}">
-                <div>
-                    <img src="{{ asset('assets/img/info-card.jpg') }}" class="img-fluid" alt="" />
-                </div>
-                <div>
-                    <img src="{{ asset('assets/img/info-card.jpg') }}" class="img-fluid" alt="" />
-                </div>
-            </div>
-        </div>
-        <div class="pt-4 col-lg-5">
-            <div class="summary entry-summary">
-                <h2 class="mb-0 font-weight-bold text-7">B2B SMART NFC BASED INFO CARD</h2>
-                <div class="clearfix pb-0">
-                    <div title="Rated 3 out of 5" class="float-left">
-                        <input type="text" class="d-none" value="3" title="" data-plugin-star-rating
-                            data-plugin-options="{'displayOnly': true, 'color': 'primary', 'size':'xs'}">
-                    </div>
-                </div>
-
-                <p class="price">
-                    <span class="amount">
-                        <?xml version="1.0"?><svg class="icon icon-tabler icon-tabler-currency-taka" fill="none"
-                            height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 0h24v24H0z" fill="none" stroke="none" />
-                            <circle cx="16.5" cy="15.5" r="1" />
-                            <path d="M7 7a2 2 0 1 1 4 0v9a3 3 0 0 0 6 0v-.5" />
-                            <path d="M8 11h6" />
-                        </svg>350
-                    </span>
-                </p>
-
-                <p class="mb-5">Introducing the new and innovative Smart Card - the must-have accessory for
-                    professionals! Share your contact information effortlessly with its built-in high frequency NFC chip
-                    and QR code, while its super glossy epoxy finish adds a touch of sophistication.</p>
-
-                <form enctype="multipart/form-data" method="post" class="cart">
-                    <div class="quantity quantity-lg">
-                        <input type="button" class="minus" value="-">
-                        <input type="text" class="input-text qty text" title="Qty" value="1" name="quantity" min="1"
-                            step="1">
-                        <input type="button" class="plus" value="+">
-                    </div>
-                    <a href="{{ route('cart.checkout') }}"
-                        class="btn btn-primary btn-rounded btn-modern text-uppercase">অর্ডার করুন এখনই </a>
-                </form>
-
-            </div>
-
-        </div>
-    </div>
-</div>
 
 
 

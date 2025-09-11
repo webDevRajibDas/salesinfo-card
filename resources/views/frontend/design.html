@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Business Card - Smart Digital Business Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7e22ce;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding-right: 40px;
+        }
+        
+        .hero-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .headline {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+        
+        .typewriter {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .typewriter::after {
+            content: "|";
+            position: absolute;
+            right: -10px;
+            color: var(--primary);
+            animation: blink 0.7s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 90%;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        
+        .feature-item i {
+            color: var(--success);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.5);
+        }
+        
+        /* Card Visualization */
+        .card-container {
+            perspective: 1000px;
+            width: 320px;
+            height: 200px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+        
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-front {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        .card-back {
+            background: white;
+            transform: rotateY(180deg);
+            color: var(--dark);
+        }
+        
+        .card-logo {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .card-chip {
+            width: 40px;
+            height: 30px;
+            background: linear-gradient(135deg, #ffb347 0%, #ffcc33 100%);
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .card-number {
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .card-holder {
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        
+        .card-name {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .card-contact {
+            margin-top: 10px;
+            font-size: 12px;
+        }
+        
+        .card-qr {
+            width: 70px;
+            height: 70px;
+            background: #f1f5f9;
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .card-qr i {
+            font-size: 24px;
+            color: var(--dark);
+        }
+        
+        /* Animation Utilities */
+        .appear-animation {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .maskUp {
+            animation: maskUp 0.8s forwards;
+        }
+        
+        .fadeInUpShorter {
+            animation: fadeInUpShorter 0.8s forwards;
+        }
+        
+        @keyframes maskUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInUpShorter {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 140px 0 60px;
+            }
+            
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+            
+            .headline {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                max-width: 100%;
+            }
+            
+            .features-grid {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .headline {
+                font-size: 2.2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-id-card"></i>
+                    <span>Info Business Card</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container" style="display: flex; flex-wrap: wrap;">
+            <div class="hero-content">
+                <div class="mb-4 overflow-hidden">
+                    <h1 class="headline font-weight-semibold ls-0 appear-animation" data-appear-animation="maskUp"
+                        data-appear-animation-delay="500">B2B <span class="typewriter">Smart Cards</span> that Convert
+                    </h1>
+                </div>
+                <p class="pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter"
+                    data-appear-animation-delay="700">Info Business Card is a modern, paperless alternative to
+                    traditional business cards. It securely stores all your essential contact details and can be
+                    instantly shared via NFC, QR code, or link.</p>
+
+                <div class="features-grid appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Name & Surname</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Company/Organization</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Contact Details</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Address</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Website</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Social Media Links</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Photo Gallery</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Theme Customization</span>
+                    </div>
+                </div>
+
+                <a href="#" data-hash data-hash-offset="70"
+                    class="btn btn-primary btn-outline btn-rounded font-weight-bold btn-px-5 btn-py-2 appear-animation"
+                    data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1100">অর্ডার করুন</a>
+            </div>
+
+            <div class="hero-visual appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1300">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <div class="card-logo">Info Business Card</div>
+                            <div class="card-chip"></div>
+                            <div class="card-number">●●●● ●●●● ●●●● 1234</div>
+                            <div class="card-holder">CARD HOLDER</div>
+                            <div class="card-name">John Smith</div>
+                        </div>
+                        <div class="card-face card-back">
+                            <div class="card-logo" style="color: var(--primary);">Digital Business Card</div>
+                            <div class="card-contact">email@example.com</div>
+                            <div class="card-contact">+1 (555) 123-4567</div>
+                            <div class="card-contact">www.example.com</div>
+                            <div class="card-qr">
+                                <i class="fas fa-qrcode"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<div class="container overflow-hidden container-xl position-relative">
+    <!-- Categories Section -->
+    <section id="categories" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">Our Smart Card Categories</h2>
+            <div class="row">
+                <!-- Unity Card -->
+                <div class="mb-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="category-card card-4">
+                        <div class="card-image">
+                            <img src="{{ asset('assets/img/cards/NFC-CARD.jpg') }}" alt="Unity Card"
+                                class="img-thumbnail">
+                            <div class="card-overlay">
+                                <div>
+                                    <div class="card-icon">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <h3 class="card-title">Smart Unity Card</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-features">
+                                <li>শক্তিশালী নেটওয়ার্ক তৈরি:রাজনৈতিক নেতা, সংগঠনের সদস্য বা ব্যবসায়িক পার্টনাররা একই
+                                    প্ল্যাটফর্মে যুক্ত থাকতে পারবেন।সহজে একে অপরের সঙ্গে যোগাযোগ স্থাপন করে সংগঠন বা
+                                    ব্যবসার নেটওয়ার্ক শক্তিশালী করা যাবে।</li>
+                                <li>বিনামূল্যে তথ্য আদান-প্রদান:সংগঠনের সকল কর্মী ও সদস্যদের মধ্যে দ্রুত ও কার্যকর
+                                    যোগাযোগ সম্ভব হবে।ডিজিটাল মাধ্যমে বিনা খরচে তথ্য শেয়ার ও গুরুত্বপূর্ণ আপডেট প্রদান
+                                    করা যাবে।এই কার্ডের মাধ্যমে সংগঠন বা ব্যবসা আরও সুসংগঠিত ও কার্যকরভাবে পরিচালনা করা
+                                    সম্ভব হবে।
+                                </li>
+                            </ul>
+                            <a href="{{ route('cart.checkout') }}" class="btn-view">অর্ডার করুন </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Business Card -->
+                <div class="mb-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="category-card card-1">
+                        <div class="card-image">
+                            <img src="{{ asset('assets/img/cards/business_card.JPG') }}" alt="Employee Card"
+                                class="img-thumbnail">
+                            <div class="card-overlay">
+                                <div>
+                                    <div class="card-icon">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <h3 class="card-title">Business Card</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+
+                            <ul class="card-features">
+                                <li>নাম ও পদবি</li>
+                                <li>প্রতিষ্ঠানের নাম</li>
+                                <li>ফোন নম্বর ও ইমেইল</li>
+                                <li>অফিস/বাসার ঠিকানা</li>
+                                <li>ওয়েবসাইট লিংক</li>
+                                <li>ফেসবুক, ইনস্টাগ্রাম, লিংকডইন, ইউটিউবসহ সকল সোশ্যাল মিডিয়া লিংক</li>
+                            </ul>
+                            <a href="{{ route('cart.checkout') }}" class="btn-view">অর্ডার করুন</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employee Card -->
+                <div class="mb-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="category-card card-2">
+                        <div class="card-image">
+                            <img src="{{ asset('assets/img/cards/NFC-CARD.jpg') }}" alt="Unity Card"
+                                class="img-thumbnail">
+                            <div class="card-overlay">
+                                <div>
+                                    <div class="card-icon">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <h3 class="card-title">Employee Card</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-features">
+                                <li>RFID technology options</li>
+                                <li>Custom security features</li>
+                                <li>Bulk ordering discounts</li>
+                            </ul>
+                            <a href="{{ route('cart.checkout') }}" class="btn-view">অর্ডার করুন </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <!-- Smart Agent Card -->
+                <div class="mb-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="category-card card-3">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80"
+                                alt="Smart Agent Card" class="img-thumbnail">
+                            <div class="card-overlay">
+                                <div>
+                                    <div class="card-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h3 class="card-title">Smart Agent Card</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+
+                            <ul class="card-features">
+                                <li>ফ্রি অনলাইন ও অফলাইন ট্রেনিং:এজেন্টদের দক্ষতা বৃদ্ধির জন্য বিনামূল্যে প্রশিক্ষণ
+                                    ব্যবস্থা।</li>
+                                <li>পার্ট টাইম ও ফুল টাইম কাজের সুযোগ:আকর্ষণীয় বেতন, কমিশন ও লিডারশিপ ইনসেনটিভ পাওয়ার
+                                    সুবিধা।</li>
+                                <li>২৪/৭ গাইডলাইন ও সাপোর্ট:ব্যবসায়িক সমস্যা সমাধানে নিরবচ্ছিন্ন সহায়তা।</li>
+                                <li>ফ্রিল্যান্সিং ক্যারিয়ারের সুযোগ:স্বাধীনভাবে কাজ করে উপার্জন ও ক্যারিয়ার গড়ার
+                                    সম্ভাবনা।</li>
+                            </ul>
+                            <a href="{{ route('cart.checkout') }}" class="btn-view">অর্ডার করুন </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<div id="shop_container" class="container shop">
+    <div class="py-5 my-5 row align-items-center justify-content-center">
+        <div class="col-lg-7">
+            <div class="mb-0 owl-carousel owl-theme dots-inside"
+                data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 1}, '992': {'items': 1}, '1200': {'items': 1}}, 'dots': true, 'nav': false}">
+                <div>
+                    <img src="{{ asset('assets/img/info-card.jpg') }}" class="img-fluid" alt="" />
+                </div>
+                <div>
+                    <img src="{{ asset('assets/img/info-card.jpg') }}" class="img-fluid" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="pt-4 col-lg-5">
+            <div class="summary entry-summary">
+                <h2 class="mb-0 font-weight-bold text-7">B2B SMART NFC BASED INFO CARD</h2>
+                <div class="clearfix pb-0">
+                    <div title="Rated 3 out of 5" class="float-left">
+                        <input type="text" class="d-none" value="3" title="" data-plugin-star-rating
+                            data-plugin-options="{'displayOnly': true, 'color': 'primary', 'size':'xs'}">
+                    </div>
+                </div>
+
+                <p class="price">
+                    <span class="amount">
+                        <?xml version="1.0"?><svg class="icon icon-tabler icon-tabler-currency-taka" fill="none"
+                            height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h24v24H0z" fill="none" stroke="none" />
+                            <circle cx="16.5" cy="15.5" r="1" />
+                            <path d="M7 7a2 2 0 1 1 4 0v9a3 3 0 0 0 6 0v-.5" />
+                            <path d="M8 11h6" />
+                        </svg>350
+                    </span>
+                </p>
+
+                <p class="mb-5">Introducing the new and innovative Smart Card - the must-have accessory for
+                    professionals! Share your contact information effortlessly with its built-in high frequency NFC chip
+                    and QR code, while its super glossy epoxy finish adds a touch of sophistication.</p>
+
+                <form enctype="multipart/form-data" method="post" class="cart">
+                    <div class="quantity quantity-lg">
+                        <input type="button" class="minus" value="-">
+                        <input type="text" class="input-text qty text" title="Qty" value="1" name="quantity" min="1"
+                            step="1">
+                        <input type="button" class="plus" value="+">
+                    </div>
+                    <a href="{{ route('cart.checkout') }}"
+                        class="btn btn-primary btn-rounded btn-modern text-uppercase">অর্ডার করুন এখনই </a>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    
+</div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize animations
+            const appearElements = document.querySelectorAll('.appear-animation');
+            
+            appearElements.forEach(element => {
+                const animationType = element.getAttribute('data-appear-animation');
+                const delay = element.getAttribute('data-appear-animation-delay') || 0;
+                
+                setTimeout(() => {
+                    element.classList.add(animationType);
+                }, parseInt(delay));
+            });
+            
+            // Typewriter effect
+            const typewriterElement = document.querySelector('.typewriter');
+            const words = ['Smart Cards', 'Digital Cards', 'NFC Cards', 'QR Cards'];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingDelay = 100;
+            let deletingDelay = 50;
+            let pauseDelay = 1500;
+            
+            function type() {
+                const currentWord = words[wordIndex];
+                
+                if (isDeleting) {
+                    typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                    typingDelay = deletingDelay;
+                } else {
+                    typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                    typingDelay = 100;
+                }
+                
+                if (!isDeleting && charIndex === currentWord.length) {
+                    isDeleting = true;
+                    typingDelay = pauseDelay;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+                
+                setTimeout(type, typingDelay);
+            }
+            
+            // Start the typewriter effect
+            setTimeout(type, 500);
+        });
+    </script>
+</body>
+</html>
