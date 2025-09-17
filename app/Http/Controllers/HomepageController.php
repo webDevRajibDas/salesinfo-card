@@ -48,12 +48,21 @@ class HomepageController extends Controller
     }
 
 
-     public function blogPost()
+     public function learnMore()
     {
 
-        return view('frontend.blog');
+        return view('frontend.learn-more');
     }
-    
+
+    public function designList()
+    {
+        return view('frontend.learn-more');
+    }
+    public function allDesignList()
+    {
+        return view('frontend.vendors.vendor-form');
+    }
+
 
     public function productShowDetail($slug)
     {
@@ -76,21 +85,6 @@ class HomepageController extends Controller
 
 
 
-    public function vendorForm()
-    {
-        return view('frontend.vendors.vendor-form');
-    }
-
-
-    public function showVendorList($categorySlug)
-    {
-        $category = SubCategorie::where('slug', $categorySlug)->firstOrFail();
-        $vendor = Vendor::where('sub_categories_id', $category)->first();
-        $all_products = Product::all();
-        $product_categories = Category::all();
-        return view('frontend.vendors.vendor-cart', compact('category', 'vendor','all_products','product_categories'));
-
-    }
 
 
 

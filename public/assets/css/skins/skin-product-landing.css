@@ -1,6 +1,9 @@
 a {
 	color: #ea4d2a;
+	text-decoration: none;
 }
+
+
 
 a:hover {
 	color: #ec6041;
@@ -784,36 +787,6 @@ html .overlay-color-light:not(.no-skin):before {
 	color: #e43c16;
 }
 
-html .btn-primary {
-	background-color: #ea4d2a;
-	border-color: #ea4d2a #ea4d2a #cd3614;
-	color: #FFF;
-}
-
-html .btn-primary:hover,
-html .btn-primary.hover {
-	background-color: #ed6a4d;
-	border-color: #ef7458 #ef7458 #ea4d2a;
-	color: #FFF;
-}
-
-html .btn-primary:focus,
-html .btn-primary.focus {
-	box-shadow: 0 0 0 3px rgba(234, 77, 42, 0.5);
-}
-
-html .btn-primary.disabled,
-html .btn-primary:disabled {
-	background-color: #ea4d2a;
-	border-color: #ea4d2a #ea4d2a #cd3614;
-}
-
-html .btn-primary:active,
-html .btn-primary.active {
-	background-color: #d83915 !important;
-	background-image: none !important;
-	border-color: #cd3614 #cd3614 #9e2a10 !important;
-}
 
 html .btn-primary-scale-2 {
 	background-color: #cd3614;

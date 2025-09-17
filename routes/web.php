@@ -12,12 +12,12 @@ use Illuminate\Support\Facades\Route;
 Route::controller(HomepageController::class)->group(function () {
     Route::get('/', 'homePage')->name('homePage');
     Route::get('/category-list', 'categoryList')->name('category.list');
-
     Route::get('/product/{slug}', 'productShowDetail')->name('product.show');
     Route::get('/upazilas/{districtId}', 'getUpazilas');
 
-
-    Route::get('/blog-post', 'blogPost')->name('blog.us');
+    Route::get('/designList/', 'allDesignList')->name('designList.show');
+    Route::get('/learnMore', 'learnMore')->name('learn.More');
+    Route::get('/designList', 'designList')->name('design.List');
     Route::get('/about-us', 'aboutUs')->name('about.us');
     Route::get('/contact-us', 'contactUs')->name('contact.us');
     Route::get('/terms-and-conditions', 'termsAndConditions')->name('terms.conditions');
