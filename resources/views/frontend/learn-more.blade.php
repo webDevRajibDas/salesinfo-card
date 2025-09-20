@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn More - B2B Smart NFC Cards</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/favicon_io/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/favicon_io/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/favicon_io/favicon-16x16.png')}}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -454,14 +457,17 @@
                 <p class="faq-answer">আমাদের প্রোফাইলে রয়েছে ইচ্ছামতো কাস্টমাইজ করার সুবিধা । আপনার তথ্য আপনি নিজে আপডেট করে নিতে পারবেন যে কোন সময় । বছরে দিতে হবে না কোন চার্জ । আমরা দিচ্ছি ১০ বছরের প্রিমিয়াম প্রোফাইল ওয়ারেন্টি, এর মধ্যে আপনার প্রোফাইলে কোন সমস্যা হলে আমাদের ওয়েবসাইট এবং Whatsapp এর মাধ্যমে সাপোর্ট নিতে পারবেন । আমাদের কার্ডটি ওয়াটারফ্রুফ , পানিতে ভিজলেও সমস্যা নেই । উচ্চমানের PVC মেটেরিয়াল দিয়ে তৈরি তাই সহজে ভাঙার ও ভয় থাকে না । আমাদের নিজস্ব ডিজাইন থেকে চয়েস করতে পারবেন অথবা নিজের মন মতো কার্ডের ডিজাইন দিতে পারবেন ।</p>
             </div>
 
-            <div class="faq-item">
-                <h3 class="faq-question">Is there an expiration date for these cards?</h3>
-                <p class="faq-answer">No, these cards have no expiration date. Once you purchase a card, you can use it for a lifetime. We also provide a 10-year warranty.</p>
-            </div>
 
             <div class="faq-item">
-                <h3 class="faq-question">How will I receive the card after ordering?</h3>
-                <p class="faq-answer">After you place your order, we will design and print your card, add your information, and deliver it to your address through a courier service.</p>
+                <h3 class="faq-question">𝗗𝗲𝗹𝗶𝘃𝗲𝗿𝘆 𝗧𝗶𝗺𝗲</h3>
+                <p class="faq-answer">✅ Inside Dhaka: 2/3 Days</p>
+                <p class="faq-answer">✅ Outside Dhaka: 3/4 Days</p>
+            </div>
+
+
+            <div class="faq-item">
+                <h3 class="faq-question"> ডেমো প্রোফাইল</h3>
+                <p class="faq-answer">ডেমো প্রোফাইল মানে আপনার তথ্য দেখতে কেমন হবে , কিভাবে আপনার তথ্য আমাদের প্রোফাইলের মাধ্যমে আসবে সেই প্রোফাইলে কি কি তথ্য থাকবে । নিছে এক্সাম্পল লিঙ্ক দেওয়া আছে</p>
             </div>
 
             <div class="faq-item">

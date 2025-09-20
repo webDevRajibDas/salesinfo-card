@@ -27,7 +27,7 @@
         <div class="py-2 row align-items-center">
           <div class="mb-5 col-lg-6 mb-lg-0">
             <div class="hero-content appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="500">
-              <h4 class="pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">Info Business Card is a modern, paperless alternative to traditional business cards. It securely stores all your essential contact details and can be instantly shared via NFC, QR code, or link. Also known as virtual, electronic, or smart business cards, they offer a convenient, eco-friendly, and tech-savvy way to share professional information anytime, anywhere.</h4>
+              <p class="pb-3 mb-4 appear-animation text-black" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">Info Business Card is a modern, paperless alternative to traditional business cards. It securely stores all your essential contact details and can be instantly shared via NFC, QR code, or link. Also known as virtual, electronic, or smart business cards, they offer a convenient, eco-friendly, and tech-savvy way to share professional information anytime, anywhere.</p>
               <div class="features-grid appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
                 <div class="feature-item">
                   <i class="fas fa-check-circle"></i>
@@ -105,52 +105,6 @@
         </header>
 
         <div class="product-grid">
-          <!-- Product 1 -->
-          <div class="product-card">
-            <div class="card-preview">
-              <div class="nfc-card">
-                <div class="card-front">
-                  <div class="card-header">
-                    <div class="card-logo">Smart Unity Card</div>
-                    <div class="nfc-icon"><i class="fas fa-wifi"></i></div>
-                  </div>
-                  <div class="card-chip"></div>
-                  <div class="card-text">Tap to share your contact info</div>
-                  <div class="card-contact">
-                    <div class="card-text">http://card.b2bplatformbd.com</div>
-                    <div class="card-qr">
-                      <i class="fas fa-qrcode"></i>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-back">
-                  <!-- Replace with your actual image path -->
-                  <img class="img-thumbnail" src="{{asset('assets/img/cards/info-card-1.jpeg')}}" alt="Info Card Back">
-                </div>
-              </div>
-            </div>
-
-            <div class="product-content">
-              <h3 class="product-title">Smart Unity Card</h3>
-              <ul class="product-features">
-                <li><i class="fas fa-check"></i> Pre-designed templates</li>
-                <li><i class="fas fa-check"></i> Basic contact information</li>
-                <li><i class="fas fa-check"></i> NFC tap technology</li>
-                <li><i class="fas fa-check"></i> Home Delivery Free</li>
-              </ul>
-              <div class="product-price">600 BDT</div>
-
-              <div class="product-cta">
-                <a href="#" class="product_btn btn-primary">
-                  <i class="fas fa-shopping-cart"></i> Order Now
-                </a>
-                <a href="{{route('learn.More')}}" class="product_btn btn-secondary">
-                  <i class="fas fa-info-circle"></i> Details
-                </a>
-              </div>
-            </div>
-          </div>
-
           <!-- Product 2 -->
           <div class="product-card">
             <div class="card-preview">
@@ -188,6 +142,51 @@
               <div class="product-price">1000 BDT</div>
 
               <div class="product-cta">
+                <a href="{{route('cart.checkout')}}" class="product_btn btn-primary">
+                  <i class="fas fa-shopping-cart"></i> Order Now
+                </a>
+                <a href="{{route('learn.More')}}" class="product_btn btn-secondary">
+                  <i class="fas fa-info-circle"></i> Details
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="card-preview">
+              <div class="nfc-card">
+                <div class="card-front">
+                  <div class="card-header">
+                    <div class="card-logo">Smart Unity Card</div>
+                    <div class="nfc-icon"><i class="fas fa-wifi"></i></div>
+                  </div>
+                  <div class="card-chip"></div>
+                  <div class="card-text">Tap to share your contact info</div>
+                  <div class="card-contact">
+                    <div class="card-text">http://card.b2bplatformbd.com</div>
+                    <div class="card-qr">
+                      <i class="fas fa-qrcode"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <!-- Replace with your actual image path -->
+                  <img class="img-thumbnail" src="{{asset('assets/img/cards/info-card-1.jpeg')}}" alt="Info Card Back">
+                </div>
+              </div>
+            </div>
+
+            <div class="product-content">
+              <h3 class="product-title">Smart Unity Card</h3>
+              <ul class="product-features">
+                <li><i class="fas fa-check"></i> Pre-designed templates</li>
+                <li><i class="fas fa-check"></i> Basic contact information</li>
+                <li><i class="fas fa-check"></i> NFC tap technology</li>
+                <li><i class="fas fa-check"></i> Home Delivery Free</li>
+              </ul>
+              <div class="product-price"></div>
+
+              <div class="product-cta">
                 <a href="#" class="product_btn btn-primary">
                   <i class="fas fa-shopping-cart"></i> Order Now
                 </a>
@@ -197,7 +196,6 @@
               </div>
             </div>
           </div>
-
           <!-- Product 3 -->
           <div class="product-card">
             <div class="card-preview">
