@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <!-- Basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <title>B2B|Smart NFC Business Cards</title>
 
     <meta name="keywords" content="B2B Platform INFO CARD"/>
@@ -14,7 +11,7 @@
           content="Choosing between an NFC business card and a QR code? We break down the pros and cons of speed, user experience, and branding to help you decide the best choice.">
     <meta name="author" content="b2bplatformbd.com">
     <meta name="apple-mobile-web-app-title" content="B2B">
-    <meta name="application-name" content="Molla">
+    <meta name="application-name" content="B2B NFC CARD">
     <meta name="msapplication-TileColor" content="#cc9966">
     <meta name="msapplication-config" content="{{asset('assets/images/icons/browserconfig.xml')}}">
     <meta name="theme-color" content="#ffffff">

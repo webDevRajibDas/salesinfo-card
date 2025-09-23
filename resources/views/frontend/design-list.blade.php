@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Gallery - NFC Card Designs</title>
+    <title>B2B|Smart NFC Business Cards</title>
+
+    <meta name="keywords" content="B2B Platform INFO CARD"/>
+    <meta name="description"
+          content="Choosing between an NFC business card and a QR code? We break down the pros and cons of speed, user experience, and branding to help you decide the best choice.">
+    <meta name="author" content="b2bplatformbd.com">
+    <meta name="apple-mobile-web-app-title" content="B2B">
+    <meta name="application-name" content="B2B NFC Card">
+    <meta name="msapplication-TileColor" content="#cc9966">
+    <meta name="msapplication-config" content="{{asset('assets/images/icons/browserconfig.xml')}}">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{asset('assets/favicon_io/favicon.ico')}}" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="{{ asset('assets/favicon_io/apple-touch-icon.png') }}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/favicon_io/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/favicon_io/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/favicon_io/favicon-16x16.png')}}">
+
+    <link rel="mask-icon" href="{{asset('assets/images/icons/safari-pinned-tab.svg')}}" color="#666666">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
