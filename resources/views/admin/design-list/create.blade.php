@@ -1,10 +1,10 @@
 @extends('admin.layouts.admin-master')
 
-@section('title', 'Create Category')
+@section('title', 'Create Design Item')
 
 @section('content')
 
-    @include('admin.product.product-categories.form')
+    @include('admin.design-list.form')
 
 @endsection
 

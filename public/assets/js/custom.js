@@ -21,3 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.getElementById('open-whatsapp').addEventListener('click', function() {
+  const phoneNumber = "8801751359305";
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=আসসালামু আলাইকুম, আমি অর্ডার করতে সমস্যায় পড়েছি। সাহায্য করুন।`;
+  window.open(whatsappUrl, '_blank');
+});

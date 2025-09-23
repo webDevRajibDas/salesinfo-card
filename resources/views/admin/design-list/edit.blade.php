@@ -2,7 +2,7 @@
 @section('title', 'Edit')
 
 @section('content')
-    @include('admin.product.sub-sub-categories.form')
+    @include('admin.product.sub-categories.form')
 @endsection
 
 @push('styles')

@@ -1019,3 +1019,202 @@
   opacity: 0.9;
 }
 
+
+
+
+/*======================= checkout page =========================*/
+
+#open-whatsapp {
+  width: 94%;
+  background: #16BE45;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(22, 190, 69, 0.3);
+  margin: 0 auto 15px;
+}
+#open-whatsapp:hover {
+  background: #128C36;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(22, 190, 69, 0.4);
+}
+#open-whatsapp:active {
+  transform: translateY(0);
+}
+.whatsapp-icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+/* Pulse animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+
+
+/*=======================  Login Page ==========================*/
+
+#login-box-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 100px 0;
+}
+
+.form-container {
+  width: 620px;
+  border-radius: 0.75rem;
+  background-color: rgba(17, 24, 39, 1);
+  padding: 2.5rem;
+  color: rgba(243, 244, 246, 1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  margin: 40px 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+}
+
+.input-group {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  color: rgba(156, 163, 175, 1);
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.input-group input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(55, 65, 81, 1);
+  outline: 0;
+  background-color: rgba(17, 24, 39, 1);
+  padding: 0.9rem 1rem;
+  color: rgba(243, 244, 246, 1);
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: rgba(167, 139, 250, 1);
+}
+
+.forgot {
+  text-align: right;
+  margin-top: -10px;
+  margin-bottom: 1.5rem;
+}
+
+.forgot a {
+  color: rgba(156, 163, 175, 1);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+  color: rgba(167, 139, 250, 1);
+}
+
+.sign {
+  display: block;
+  width: 100%;
+  background-color: rgba(167, 139, 250, 1);
+  padding: 0.9rem;
+  text-align: center;
+  color: rgba(17, 24, 39, 1);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sign:hover {
+  background-color: rgba(139, 92, 246, 1);
+}
+
+.social-message {
+  display: flex;
+  align-items: center;
+  margin: 1.8rem 0;
+}
+
+.line {
+  height: 1px;
+  flex: 1 1 0%;
+  background-color: rgba(55, 65, 81, 1);
+}
+
+.social-message .message {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 0.9rem;
+  color: rgba(156, 163, 175, 1);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icons .icon {
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  border: none;
+  background-color: transparent;
+  color: rgba(243, 244, 246, 1);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.social-icons .icon:hover {
+  background-color: rgba(55, 65, 81, 1);
+}
+
+.signup {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: rgba(156, 163, 175, 1);
+  font-size: 0.95rem;
+}
+
+.signup a {
+  color: rgba(167, 139, 250, 1);
+  text-decoration: none;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 650px) {
+  .form-container {
+    width: 90%;
+    padding: 1.8rem;
+  }
+}

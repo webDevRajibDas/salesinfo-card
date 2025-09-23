@@ -1,20 +1,18 @@
 <?php
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\HomeWidgetController;
-use App\Http\Controllers\Admin\SubSubcategoriesController;
-use App\Http\Controllers\Admin\VideoController;
+
 use App\Http\Controllers\Admin\CardCategoriesController;
-use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CardController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DesignListController;
+use App\Http\Controllers\Admin\HomeWidgetController;
 use App\Http\Controllers\Admin\MasterSettingController;
 use App\Http\Controllers\Admin\ProductCategoriesController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\SubCategoriesController;
-use App\Http\Controllers\Admin\VendorCategoriesController;
-use App\Http\Controllers\Admin\VendorsController;
-
+use App\Http\Controllers\Admin\SubSubcategoriesController;
+use App\Http\Controllers\Admin\VideoController;
+use Illuminate\Support\Facades\Route;
 
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'isAdmin'])->group(function () {
@@ -42,9 +40,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'isAdmin'])->group(f
         'cards' => CardController::class,
         'sub-categories' => SubCategoriesController::class,
         'sliders' => SliderController::class,
-        'brands' => BrandController::class,
         'videos' => VideoController::class,
+        'design-list' => DesignListController::class,
     ]);
+
+
 
 
     Route::get('widgets', [HomeWidgetController::class, 'index'])->name('widgets.index');

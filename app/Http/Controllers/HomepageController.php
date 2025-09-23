@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DesignList;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Slider;
@@ -56,11 +57,8 @@ class HomepageController extends Controller
 
     public function designList()
     {
-        return view('frontend.learn-more');
-    }
-    public function allDesignList()
-    {
-        return view('frontend.vendors.vendor-form');
+        $designLists = DesignList::all();
+        return view('frontend.design-list',compact('designLists'));
     }
 
 

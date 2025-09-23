@@ -6,8 +6,6 @@
 @section('content')
 
 
-
-
 <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
     <div class="container">
         <div class="row">
@@ -29,6 +27,11 @@
         <div class="col-lg-9">
 
            <h3> অর্ডার করতে নিচের ফর্মটি সঠিক ভাবে পুরন করুন।</h3>
+
+            <button id="open-whatsapp" class="btn messenger-btn btn-sm pulse">
+                <span class="whatsapp-icon">💬</span>
+                অর্ডার করতে সমস্যা হলে WhatsApp করুন
+            </button>
 
             <div class="accordion accordion-modern" id="accordion">
                 <div class="card card-default">
@@ -65,6 +68,21 @@
                                         </select>
                                     </div>
                                 </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-lg-6">
+                                        <label class="font-weight-bold text-dark text-2">Design No: See List</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>Full Customize NFC Card</option>
+                                            <option>Business Card</option>
+                                            <option>Smart Unity Card</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label class="font-weight-bold text-dark text-2">Quantity : </label>
+                                        <input type="number" value="1" class="form-control" min="1">
+                                    </div>
+                                </div>
                                 <div class="form-row">
                                     <div class="form-group col-lg-6">
                                         <label class="font-weight-bold text-dark text-2">Email</label>
@@ -75,19 +93,19 @@
                                         <input type="text" value="" class="form-control">
                                     </div>
                                 </div>
-
-                                <div class="form-row">
-                                    <div class="form-group col">
-                                        <label class="font-weight-bold text-dark text-2">Address </label>
-                                        <input type="text" value="" class="form-control">
-                                    </div>
-                                </div>
                                 <div class="form-row">
                                     <div class="form-group col">
                                         <label class="font-weight-bold text-dark text-2">City </label>
                                         <input type="text" value="" class="form-control">
                                     </div>
                                 </div>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <label class="font-weight-bold text-dark text-2">Address </label>
+                                        <input type="text" value="" class="form-control">
+                                    </div>
+                                </div>
+
                                 <div class="form-row">
                                     <div class="form-group col">
                                         <input type="submit" value="Continue"

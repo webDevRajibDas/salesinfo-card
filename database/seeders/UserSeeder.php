@@ -16,7 +16,8 @@ class UserSeeder extends Seeder
     {
         // Create a default admin user
         DB::table('users')->insert([
-            'name' => 'slider User',
+            'name' => 'Admin User',
+            'role' => 'admin',
             'email' => 'admin@example.com',
             'password' => Hash::make('password'), // Hash the password
             'created_at' => now(),

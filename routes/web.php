@@ -15,7 +15,6 @@ Route::controller(HomepageController::class)->group(function () {
     Route::get('/product/{slug}', 'productShowDetail')->name('product.show');
     Route::get('/upazilas/{districtId}', 'getUpazilas');
 
-    Route::get('/designList/', 'allDesignList')->name('designList.show');
     Route::get('/learnMore', 'learnMore')->name('learn.More');
     Route::get('/designList', 'designList')->name('design.List');
     Route::get('/about-us', 'aboutUs')->name('about.us');
