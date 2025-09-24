@@ -110,18 +110,17 @@
             <div class="card-preview">
               <div class="nfc-card">
                 <div class="card-front">
-                  <img class="img-thumbnail" src="{{asset('assets/img/cards/business_card.JPG')}}" alt="Info Card Back">
+                  <img class="img-thumbnail" src="{{asset('assets/img/cards/full_customize.jpg')}}" alt="Info Card Back">
                 </div>
                 <div class="card-back">
                   <!-- Replace with your actual image path -->
                   <div class="card-header">
-                    <div class="card-logo">B2B SMART NFC</div>
+                    <div class="card-logo">Full Customize NFC Card</div>
                     <div class="nfc-icon"><i class="fas fa-wifi"></i></div>
                   </div>
                   <div class="card-chip"></div>
                   <div class="card-text">Tap to share your contact info</div>
                   <div class="card-contact">
-                    <div class="card-text">www.intro-nfc.com</div>
                     <div class="card-qr">
                       <i class="fas fa-qrcode"></i>
                     </div>
@@ -132,7 +131,7 @@
             </div>
 
             <div class="product-content">
-              <h3 class="product-title">Full Customize NFC Card</h3>
+              <h3 class="product-title">Customize NFC Card</h3>
               <ul class="product-features">
                 <li><i class="fas fa-check"></i> Custom logo design</li>
                 <li><i class="fas fa-check"></i> Extended digital profile</li>
@@ -151,6 +150,42 @@
               </div>
             </div>
           </div>
+
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="card-preview">
+              <div class="nfc-card">
+                <div class="card-front">
+                  <img class="img-thumbnail" src="{{asset('assets/img/cards/non-customize.jpg')}}" alt="Info Card Back">
+                </div>
+                <div class="card-back">
+                  <!-- Replace with your actual image path -->
+                  <img class="img-thumbnail" src="{{asset('assets/img/cards/info-card-1.jpeg')}}" alt="Info Card Back">
+                </div>
+              </div>
+            </div>
+
+            <div class="product-content">
+              <h3 class="product-title">Business NFC Card</h3>
+              <ul class="product-features">
+                <li><i class="fas fa-check"></i> Complete branding</li>
+                <li><i class="fas fa-check"></i> Admin dashboard access</li>
+                <li><i class="fas fa-check"></i> NFC, QR & digital options</li>
+                <li><i class="fas fa-check"></i> Home Delivery Free</li>
+              </ul>
+              <div class="product-price">600 BDT</div>
+
+              <div class="product-cta">
+                <a href="#" class="product_btn btn-primary">
+                  <i class="fas fa-shopping-cart"></i> Order Now
+                </a>
+                <a href="{{route('learn.More')}}" class="product_btn btn-secondary">
+                  <i class="fas fa-info-circle"></i> Details
+                </a>
+              </div>
+            </div>
+          </div>
+
           <!-- Product 1 -->
           <div class="product-card">
             <div class="card-preview">
@@ -185,40 +220,6 @@
                 <li><i class="fas fa-check"></i> Home Delivery Free</li>
               </ul>
               <div class="product-price"></div>
-
-              <div class="product-cta">
-                <a href="#" class="product_btn btn-primary">
-                  <i class="fas fa-shopping-cart"></i> Order Now
-                </a>
-                <a href="{{route('learn.More')}}" class="product_btn btn-secondary">
-                  <i class="fas fa-info-circle"></i> Details
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- Product 3 -->
-          <div class="product-card">
-            <div class="card-preview">
-              <div class="nfc-card">
-                <div class="card-front">
-                  <img class="img-thumbnail" src="{{asset('assets/img/cards/info-card-2.jpeg')}}" alt="Info Card Back">
-                </div>
-                <div class="card-back">
-                  <!-- Replace with your actual image path -->
-                  <img class="img-thumbnail" src="{{asset('assets/img/cards/info-card-1.jpeg')}}" alt="Info Card Back">
-                </div>
-              </div>
-            </div>
-
-            <div class="product-content">
-              <h3 class="product-title">Business Bundle</h3>
-              <ul class="product-features">
-                <li><i class="fas fa-check"></i> Complete branding</li>
-                <li><i class="fas fa-check"></i> Admin dashboard access</li>
-                <li><i class="fas fa-check"></i> NFC, QR & digital options</li>
-                <li><i class="fas fa-check"></i> Home Delivery Free</li>
-              </ul>
-              <div class="product-price">600 BDT</div>
 
               <div class="product-cta">
                 <a href="#" class="product_btn btn-primary">
