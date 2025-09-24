@@ -71,11 +71,12 @@
 
                                 <div class="form-row">
                                     <div class="form-group col-lg-6">
-                                        <label class="font-weight-bold text-dark text-2">Design No: See List</label>
+
+                                        <label class="font-weight-bold text-dark text-2">Design No:  <a href="{{route('design.List')}}">See List</a> </label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Full Customize NFC Card</option>
-                                            <option>Business Card</option>
-                                            <option>Smart Unity Card</option>
+                                            @foreach($designLists as $data)
+                                                <option value="{{$data->design_no}}">#{{$data->design_no}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group col-lg-6">
@@ -106,97 +107,12 @@
                                     </div>
                                 </div>
 
-                                <div class="form-row">
-                                    <div class="form-group col">
-                                        <input type="submit" value="Continue"
-                                            class="float-right pl-4 pr-4 mb-2 btn btn-rounded btn-xl btn-light text-2 font-weight-semibold text-uppercase"
-                                            data-loading-text="Loading...">
-                                    </div>
-                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
 
-                <div class="card card-default">
-                    <div class="card-header">
-                        <h4 class="m-0 card-title">
-                            <a class="accordion-toggle text-uppercase" data-toggle="collapse" data-parent="#accordion"
-                                href="#collapseThree">
-                                Review &amp; Payment
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseThree" class="collapse">
-                        <div class="card-body">
 
-
-                            <hr class="my-5 solid">
-
-                            <h4 class="text-primary">Cart Totals</h4>
-                            <table class="cart-totals">
-                                <tbody>
-                                    <tr class="cart-subtotal">
-                                        <th>
-                                            <strong class="text-dark">Cart Subtotal</strong>
-                                        </th>
-                                        <td>
-                                            <strong class="text-dark"><span class="amount"></span></strong>
-                                        </td>
-                                    </tr>
-                                    <tr class="shipping">
-                                        <th>
-                                            Shipping
-                                        </th>
-                                        <td>
-                                            Free Shipping<input type="hidden" value="free_shipping" id="shipping_method"
-                                                name="shipping_method">
-                                        </td>
-                                    </tr>
-                                    <tr class="total">
-                                        <th>
-                                            <strong class="text-dark">Order Total</strong>
-                                        </th>
-                                        <td>
-                                            <strong class="text-dark"><span class="amount"></span></strong>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <hr class="my-5 solid">
-
-                            <h4 class="text-primary">Payment</h4>
-
-                            <form action="/" id="frmPayment" method="post">
-                                <div class="form-row">
-                                    <div class="form-group col">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="paymentdirectbank">
-                                            <label class="custom-control-label" for="paymentdirectbank">Bkash</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="paymentcheque">
-                                            <label class="custom-control-label" for="paymentcheque">Rocket</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="paymentpaypal">
-                                            <label class="custom-control-label" for="paymentpaypal">Nagad</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="actions-continue">
@@ -205,10 +121,7 @@
             </div>
 
         </div>
-        <div class="col-lg-3">
-            <h4 class="text-primary text-uppercase">Totals</h4>
 
-        </div>
     </div>
 </div>
 

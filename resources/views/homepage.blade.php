@@ -91,7 +91,7 @@
     </section>
 
 
-    <section id="shop_container" class="product-header">
+    <section id="categories" class="product-header">
       <div class="container">
         <header class="product-header-line">
           <!-- Decorative circles -->
@@ -176,7 +176,7 @@
               <div class="product-price">600 BDT</div>
 
               <div class="product-cta">
-                <a href="#" class="product_btn btn-primary">
+                <a href="{{route('cart.checkout')}}" class="product_btn btn-primary">
                   <i class="fas fa-shopping-cart"></i> Order Now
                 </a>
                 <a href="{{route('learn.More')}}" class="product_btn btn-secondary">
@@ -306,7 +306,7 @@
 
       </div>
 
-      <a href="#design-list" class="view-all-btn">
+      <a href="{{route('design.List')}}" class="view-all-btn">
         View All Design Options <i class="fas fa-arrow-right"></i>
       </a>
     </section>

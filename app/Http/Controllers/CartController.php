@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\DesignList;
 use App\Models\District;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -249,22 +250,8 @@ class CartController extends Controller
 
     public function checkOuts()
     {
-
-        if (auth()->check()) {
-            $user_id = auth()->id();
-            $cartItems = Cart::where('user_id', $user_id)->with('products')->get();
-        } else {
-            $cart = json_decode(request()->cookie('cart'), true) ?? session('cart', []);
-
-            //dd($cart);
-
-            $cartItems = collect($cart)->map(function ($quantity, $product_id) {
-                $product = \App\Models\Product::find($product_id);
-                return $product ? (object) ['product' => $product, 'quantity' => $quantity] : null;
-            })->filter()->values()->all();
-        }
-
-        return view('frontend.cart.checkout');
+        $designLists = DesignList::all();
+        return view('frontend.cart.checkout',compact('designLists'));
 
     }
 

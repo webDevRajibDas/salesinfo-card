@@ -309,7 +309,7 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">{{$designList->title}}</p>
-                            <button class="wth_order_btn"><i class="animation"></i>Order with {{$designList->design_no}}
+                            <button data-design_id="{{$designList->design_no}}" class="wth_order_btn"><i class="animation"></i>Order with {{$designList->design_no}}
                                 No Design<i class="animation"></i>
                             </button>
                         </div>
