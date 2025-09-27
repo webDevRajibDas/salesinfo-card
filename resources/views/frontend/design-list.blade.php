@@ -333,6 +333,7 @@
                 a custom design.
             </div>
         </div>
+        <a style="color:white; text-decoration:none" href="{{URL('/')}}">Home</a>
     </header>
 
     <section style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" class="gallery-section">

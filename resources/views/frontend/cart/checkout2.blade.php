@@ -310,6 +310,7 @@
         <div class="header-content">
             <div class="badge-header">Checkout</div>
         </div>
+        <a style="color:white; text-decoration:none" href="{{URL('/')}}">Home</a>
     </header>
 
     <section class="checkout-content">
