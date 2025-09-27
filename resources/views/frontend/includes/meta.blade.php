@@ -1,58 +1,20 @@
-@php
-if(!isset($meta_page_type)){
-$meta_page_type = 'website';
-}
-@endphp
 
-@switch($meta_page_type)
-@case('website')
-<meta property="og:type" content="website" />
-@break
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="B2B Platform INFO CARD"/>
+<meta name="description"
+      content="Choosing between an NFC business card and a QR code? We break down the pros and cons of speed, user experience, and branding to help you decide the best choice.">
+<meta name="author" content="b2bplatformbd.com">
+<meta name="apple-mobile-web-app-title" content="B2B">
+<meta name="application-name" content="B2B NFC CARD">
+<meta name="msapplication-TileColor" content="#cc9966">
+<meta name="msapplication-config" content="{{asset('assets/images/icons/browserconfig.xml')}}">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+<!-- Favicon -->
+<link rel="shortcut icon" href="{{asset('assets/favicon_io/favicon.ico')}}" type="image/x-icon"/>
+<link rel="apple-touch-icon" href="{{ asset('assets/favicon_io/apple-touch-icon.png') }}">
 
-@case('article')
-{{-- Facebook Meta --}}
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="{{$$module_name_singular->published_at}}" />
-<meta property="article:modified_time" content="{{$$module_name_singular->updated_at}}" />
-<meta property="article:author" content="{{isset($$module_name_singular->created_by_alias)? $$module_name_singular->created_by_alias : $$module_name_singular->created_by_name}}" />
-<meta property="article:section" content="{{$$module_name_singular->category_name}}" />
-@foreach ($$module_name_singular->tags as $tag)
-<meta property="article:tag" content="{{$tag->name}}" />
-@endforeach
-
-@break
-
-@case('profile')
-<meta property="og:type" content="profile" />
-<meta property="profile:first_name" content="{{$$module_name_singular->first_name}}" />
-<meta property="profile:last_name" content="{{$$module_name_singular->last_name}}" />
-<meta property="profile:username" content="{{$$module_name_singular->email}}" />
-<meta property="profile:gender" content="{{$$module_name_singular->gender}}" />
-@break
-
-@default
-
-@endswitch
-
-<!-- Facebook Meta -->
-<meta property="og:url" content="{{url()->full()}}" />
-<meta property="og:title" content="@yield('title') | {{ config('app.name') }}" />
-<meta property="og:site_name" content="{{setting('meta_site_name')}}" />
-<meta property="og:description" content="{{ setting('meta_description') }}" />
-<meta property="og:image" content="{{ asset(setting('meta_image')) }}" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-
-<!-- Twitter Meta -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="{{ setting('meta_twitter_site') }}">
-<meta name="twitter:url" content="{{url()->full()}}" />
-<meta name="twitter:creator" content="{{ setting('meta_twitter_creator') }}">
-<meta name="twitter:title" content="@yield('title') | {{ config('app.name') }}">
-<meta name="twitter:description" content="{{ setting('meta_description') }}">
-<meta name="twitter:image" content="{{ asset(setting('meta_image')) }}">
-
-<!--canonical link-->
-<link type="text/plain" rel="author" href="{{asset('humans.txt')}}" />
-<meta name="generator" content="Laravel Starter - A CMS like modular Laravel starter project." />
-<link rel="canonical" href="{{url()->full()}}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/favicon_io/apple-touch-icon.png')}}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/favicon_io/favicon-32x32.png')}}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/favicon_io/favicon-16x16.png')}}">

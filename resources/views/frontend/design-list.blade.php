@@ -1,27 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B2B|Smart NFC Business Cards</title>
 
-    <meta name="keywords" content="B2B Platform INFO CARD"/>
-    <meta name="description"
-          content="Choosing between an NFC business card and a QR code? We break down the pros and cons of speed, user experience, and branding to help you decide the best choice.">
-    <meta name="author" content="b2bplatformbd.com">
-    <meta name="apple-mobile-web-app-title" content="B2B">
-    <meta name="application-name" content="B2B NFC Card">
-    <meta name="msapplication-TileColor" content="#cc9966">
-    <meta name="msapplication-config" content="{{asset('assets/images/icons/browserconfig.xml')}}">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/favicon_io/favicon.ico')}}" type="image/x-icon"/>
-    <link rel="apple-touch-icon" href="{{ asset('assets/favicon_io/apple-touch-icon.png') }}">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/favicon_io/apple-touch-icon.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/favicon_io/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/favicon_io/favicon-16x16.png')}}">
+    @include('frontend.includes.meta')
 
     <link rel="mask-icon" href="{{asset('assets/images/icons/safari-pinned-tab.svg')}}" color="#666666">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -270,6 +254,72 @@
                 box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
             }
         }
+        /* Selected Design Indicator */
+        .selected-design {
+            background: var(--success);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Checkout Modal */
+        .modal-content {
+            border-radius: 16px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-bottom: none;
+            border-radius: 16px 16px 0 0;
+            padding: 20px;
+        }
+
+        .modal-title {
+            font-weight: 700;
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .design-confirmation {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--light);
+            border-radius: 8px;
+        }
+
+        .design-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        .btn-checkout {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .btn-checkout:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
     </style>
 </head>
 <body>
@@ -312,6 +362,7 @@
                             <button data-design_id="{{$designList->design_no}}" class="wth_order_btn"><i class="animation"></i>Order with {{$designList->design_no}}
                                 No Design<i class="animation"></i>
                             </button>
+                            <div class="selected-design">Selected</div>
                         </div>
                     </div>
                 </div>
@@ -320,13 +371,42 @@
         </div>
 
     </section>
-</div>
 
+
+    <!-- Checkout Modal -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="checkoutModalLabel">Confirm Your Order</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="design-confirmation">
+                        <p>You have selected:</p>
+                        <div class="design-number" id="selectedDesignNumber">Design #001</div>
+                        <p>Proceed to checkout with this design?</p>
+                    </div>
+                    <button id="proceedCheckout" class="btn-checkout">
+                        <i class="fas fa-shopping-cart"></i> Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Simple animation for decorative elements
     document.addEventListener('DOMContentLoaded', function() {
         const circles = document.querySelectorAll('.circle');
+        const orderButtons = document.querySelectorAll('.wth_order_btn');
+        const checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+        const selectedDesignNumber = document.getElementById('selectedDesignNumber');
+        const proceedCheckout = document.getElementById('proceedCheckout');
+        let currentDesignId = null;
 
+        // Animation for decorative elements
         circles.forEach((circle, index) => {
             circle.style.opacity = '0';
             circle.style.transform = 'scale(0)';
@@ -338,59 +418,34 @@
             }, 500 + (index * 300));
         });
 
-        // Filter functionality
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const designItems = document.querySelectorAll('.design-item');
-
-        filterButtons.forEach(button => {
+        // Order button functionality
+        orderButtons.forEach(button => {
             button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-
-                // Add active class to clicked button
-                this.classList.add('active');
-
-                const filterValue = this.getAttribute('data-filter');
-
-                // Show/hide design items based on filter
-                designItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
+                const designId = this.getAttribute('data-design_id');
+                currentDesignId = designId;
+                selectedDesignNumber.textContent = `Design #${designId}`;
+                checkoutModal.show();
             });
         });
 
-        // View toggle functionality
-        const viewButtons = document.querySelectorAll('.view-btn');
-        const designGallery = document.getElementById('designGallery');
+        // Proceed to checkout
+        proceedCheckout.addEventListener('click', function() {
+            if (currentDesignId) {
+                //alert(`Redirecting to checkout with Design #${currentDesignId}`);
+                 window.location.href = `/checkout?design_id=${currentDesignId}`;
+                // Close modal
+                checkoutModal.hide();
+            }
+        });
 
-        viewButtons.forEach(button => {
+        // Optional: Add visual feedback for selected design
+        orderButtons.forEach(button => {
             button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                viewButtons.forEach(btn => btn.classList.remove('active'));
-
-                // Add active class to clicked button
-                this.classList.add('active');
-
-                const viewValue = this.getAttribute('data-view');
-
-                // Change layout based on view
-                if (viewValue === 'list') {
-                    designGallery.classList.add('list-view');
-                    designItems.forEach(item => {
-                        item.classList.remove('col-md-3', 'col-sm-6');
-                        item.classList.add('col-6');
-                    });
-                } else {
-                    designGallery.classList.remove('list-view');
-                    designItems.forEach(item => {
-                        item.classList.remove('col-6');
-                        item.classList.add('col-md-3', 'col-sm-6');
-                    });
-                }
+                orderButtons.forEach(btn => {
+                    btn.parentElement.querySelector('.selected-design').style.display = 'none';
+                });
+                // Add selected class to clicked button
+                this.parentElement.querySelector('.selected-design').style.display = 'block';
             });
         });
     });

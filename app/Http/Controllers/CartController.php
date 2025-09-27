@@ -251,7 +251,7 @@ class CartController extends Controller
     public function checkOuts()
     {
         $designLists = DesignList::all();
-        return view('frontend.cart.checkout',compact('designLists'));
+        return view('frontend.cart.checkout2',compact('designLists'));
 
     }
 

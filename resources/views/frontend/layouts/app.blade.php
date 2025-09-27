@@ -4,7 +4,7 @@
     <!-- Basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>B2B|Smart NFC Business Cards</title>
+    <title>B2B || Smart NFC Business Cards</title>
 
     <meta name="keywords" content="B2B Platform INFO CARD"/>
     <meta name="description"
